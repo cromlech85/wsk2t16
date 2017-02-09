@@ -51,7 +51,7 @@ studentApp.factory('AuthInterceptor', function() {
 
 studentApp.run(function ($rootScope, $http, $location, $window, authService) {
     $rootScope.$on('$locationChangeStart', function (event, next, current) {
-        var BASEURL = 'http://localhost:8383/WSK2T12/index.html#/';
+        var BASEURL = 'https://cromlech85.github.io/wsk2t16/index.html#/';
         if (authService.isLoggedIn() == false) {
             if (next ==  BASEURL + 'admin') {
                 $location.path('/login')
