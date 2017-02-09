@@ -1,0 +1,21 @@
+<!-- login.html-->
+
+<div class="panel panel-default">
+    <div class="panel-heading"><strong>Login</strong></div>
+    <div class="panel-body">
+        <form role="form">
+            <div class="form-group">
+                <label>Tunnus:</label>
+                <input type="text" class="form-control"  placeholder="Tunnus" ng-model="user.username">
+
+                <label>Salasana:</label>
+                <input type="password" class="form-control" placeholder="Salasana" ng-model="user.password">
+
+            </div>
+            <button type="submit" class="btn btn-default" ng-click="login()">Kirjaudu</button>
+            <div ng-show="error" class="alert alert-danger row">
+                <span>{{ error.message}}</span>
+            </div>
+        </form>
+    </div>
+</div>

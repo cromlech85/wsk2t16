@@ -1,0 +1,59 @@
+<!-- admin.html -->
+
+<div class="panel panel-default">
+    <div class="panel-heading"><strong>Admin</strong></div>
+    
+    <div class="panel-body">
+        
+        <!--Tämä on tilanteesta riippuen muokkaus- tai lisäyslomake -->
+        <form role="form">
+            <div class="form-group">
+                <label for="nimi">#:</label>
+                <input type="text" class="form-control" id="student_number" placeholder="opiskelijanumero" ng-model="formdata.opiskelijanumero">
+                
+                <label for="nimi">Nimi:</label>
+                <input type="text" class="form-control" id="name" placeholder="nimi" ng-model="formdata.nimi">
+
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" placeholder="email" ng-model="formdata.email">
+
+                <label for="nimi">Opintopisteet:</label>
+                <input type="text" class="form-control" id="study_points" placeholder="opintopisteet" ng-model="formdata.opintopisteet">
+                <input type="hidden" ng-model="formdata._id"/>
+            </div>
+            
+            <button type="submit" class="btn btn-default" ng-show="createbtn" ng-click="create()">Luo uusi</button>
+            <button type="submit" class="btn btn-default" ng-show="updatebtn" ng-click="update()">Muokkaa</button>
+            
+        </form>
+    </div>
+    
+    <div class="panel-body">
+
+        <div class="table-responsive">          
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Nimi</th>
+                        <th>Email</th>
+                        <th>Opintopisteet</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                     <tr ng-repeat="x in students">
+                        <td>{{x.opiskelijanumero}}</td>
+                        <td>{{x.nimi}}</td>
+                        <td>{{ x.email}}</td>
+                        <td>{{ x.opintopisteet}}</td>
+                        <td><span id="del" class="btn btn-link" ng-click="del(x)">Poista</span></td>
+                        <td><span id="updform" class="btn btn-link" ng-click="updateform(x)">Muokkaa</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+     
+</div>

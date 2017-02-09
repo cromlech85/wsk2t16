@@ -1,0 +1,27 @@
+<!-- show.html -->
+<div class="panel panel-default">
+    <div class="panel-heading"><strong>Opiskelijat</strong></div>
+    <div class="panel-body">
+
+        <div class="table-responsive">          
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Nimi</th>
+                        <th>Email</th>                        
+                        <th>Opintopisteet</th>
+                    </tr>
+                </thead>
+                <tbody>
+                     <tr ng-repeat="x in students">
+                        <td>{{ x.opiskelijanumero}}</td>
+                        <td>{{x.nimi}}</td>
+                        <td>{{ x.email}}</td>                       
+                        <td>{{ x.opintopisteet}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
